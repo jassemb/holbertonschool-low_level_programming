@@ -6,19 +6,16 @@
  */
 int main(void)
 {
-int a, b,c;
-for (a = '0'; a <= '9'; a++)
+int i, j, k;
+for (i = 0 ; i < 9 ; i++)
 {
-for (b = '0'; b <= '9'; b++)
+	for (j = 1 ; j <= 9; j++)
 {
-for (c = '0'; c <= '9'; b++)
+	for (k = 1 ; k <= 9; k++)
+	if (i < j && j < k)
 {
-if (a < b && b<c)
-{
-	putchar(a);
-	putchar(b);
-	putchar(c);
-if (a != '7' || b != '8'||c !='9')
+	printf("%d%d%d", i, j, k);
+	if (i != 7 || j != 8 || k != 9)
 {
 	putchar(',');
 	putchar(' ');
@@ -26,7 +23,6 @@ if (a != '7' || b != '8'||c !='9')
 }
 }
 }
-}
-putchar('\n');
+printf("\n");
 return (0);
 }
