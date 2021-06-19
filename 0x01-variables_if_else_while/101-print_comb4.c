@@ -7,7 +7,7 @@
 int main(void)
 {
 int i, j, k;
-for (i = '0' ; i <'9' ; i++)
+for (i = '0' ; i < '9' ; i++)
 {
 	for (j = '1' ; j <= '9'; j++)
 {
@@ -15,7 +15,7 @@ for (i = '0' ; i <'9' ; i++)
 	if (i < j && j < k)
 {
 	putchar(i);
-	putchar(j); 
+	putchar(j);
 	putchar(k);
 	if (i != 7 || j != 8 || k != 9)
 {
