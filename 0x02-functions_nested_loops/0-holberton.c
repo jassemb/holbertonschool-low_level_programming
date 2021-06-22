@@ -9,7 +9,7 @@ int main(void)
         char ch[100]="Holberton";
         int i;
         for (i = 0; i <=9; i++)
-                putchar(ch[i]);
-        putchar('\n');
+                _putchar(ch[i]);
+       _putchar('\n');
 	return (0);
 }
