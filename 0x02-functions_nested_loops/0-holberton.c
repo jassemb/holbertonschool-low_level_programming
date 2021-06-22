@@ -1,6 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
+#include "holberton.h"
 /**
  * main - Entry point
  *
@@ -13,4 +11,5 @@ int main(void)
         for (i = 0; i <=9; i++)
                 putchar(ch[i]);
         putchar('\n');
+	return (0);
 }
