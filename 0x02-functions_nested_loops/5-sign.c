@@ -5,7 +5,7 @@
  *
  * Return: 1 (Success)
  */
-int _islower(int n)
+int print_sign(int n)
 {
 
 	if (n > 0)
