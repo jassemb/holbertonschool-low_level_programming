@@ -1,6 +1,6 @@
 #include "holberton.h"
 /**
- * print_alphabet - prints the lowercase alphabet
+ * _islower(int c)- checks for lowercase character
  *
  * Return: 1 (Success)
  */
@@ -8,6 +8,6 @@ int _islower(int c)
 {
 	if (c < 'z' && c > 'a')
 		return (1);
-		else 
+		else
 			return (0);
 }
