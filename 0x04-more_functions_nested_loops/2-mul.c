@@ -5,11 +5,9 @@
  *  @a: number for multipliction
  *
  *
- * Return: 0
+ * Return: a * b
  */
 int mul(int a, int b)
 {
-	n = a * b;
-	_putchar (n);
-	return (0);
+	return (a * b);
 }
