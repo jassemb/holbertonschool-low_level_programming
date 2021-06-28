@@ -1,4 +1,4 @@
-   #include "holberton.h"
+#include "holberton.h"
 int _strlen(char *s);
 /**
  * _strcpy - copies the string pointed to by src to buffer
