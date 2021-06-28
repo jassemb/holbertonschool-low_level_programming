@@ -1,7 +1,7 @@
 #include "holberton.h"
 int _strlen(char *s);
 /**
- * puts2 - prints one char out of 2 of a string, followed by a new line
+ * puts_half - prints one char out of 2 of a string, followed by a new line
  * @str: pointer to string
  */
 void puts_half(char *str)
@@ -9,7 +9,7 @@ void puts_half(char *str)
 	int c;
 	int len = _strlen(str);
 
-	for (c = 0; c <= (len / 2); c ++)
+for (c = 0; c <= ((len - 1) / 2); c++)
 		_putchar(str[c]);
 
 	_putchar('\n');
