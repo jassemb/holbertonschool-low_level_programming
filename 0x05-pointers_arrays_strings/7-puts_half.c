@@ -9,10 +9,18 @@ void puts_half(char *str)
 	int c;
 	int len = _strlen(str);
 
-for (c = len / 2; c < len; c++)
-		_putchar(str[c]);
-
-	_putchar('\n');
+	if (len % 2 == 0)
+	{
+		for (c = len / 2; c < len; c++)
+			_putchar(str[c]);
+		_putchar('\n');
+	}
+	else
+	{
+		for (c = (len / 2) + 1; c < len; c++)
+			_putchar(str[c]);
+		_putchar('\n');
+		}
 }
 /**
  * _strlen - returns the length of a string
