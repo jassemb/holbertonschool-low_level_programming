@@ -1,7 +1,7 @@
 #include "holberton.h"
 int _strlen(char *s);
 /**
- * print_rev - prints a string, in reverse, followed by a new line
+ * puts2 - prints a string, in reverse, followed by a new line
  * @str: pointer to string
  */
 void puts2(char *str)
