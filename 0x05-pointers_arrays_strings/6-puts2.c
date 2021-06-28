@@ -2,7 +2,7 @@
 int _strlen(char *s);
 /**
  * print_rev - prints a string, in reverse, followed by a new line
- * @s: pointer to string
+ * @str: pointer to string
  */
 void puts2(char *str)
 {
