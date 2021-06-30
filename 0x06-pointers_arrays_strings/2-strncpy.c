@@ -4,7 +4,7 @@
  * @dest: destination string
  * @src: source string
  * @n: bytes to be copied
- * Return: destination string concatenated
+ * Return: destination string copied
  */
 char *_strncpy(char *dest, char *src, int n)
 {
