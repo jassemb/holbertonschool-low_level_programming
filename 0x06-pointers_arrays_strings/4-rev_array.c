@@ -1,4 +1,4 @@
-#include "bootcamp.h"
+#include "holberton.h"
 /**
  * reverse_array - Reverses the content of an array.
  * @a: The array of integers to be reversed.
