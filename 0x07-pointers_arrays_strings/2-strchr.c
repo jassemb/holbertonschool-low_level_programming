@@ -7,7 +7,7 @@
  * Return: the first occurrence of c in s or null if not found
  *
  */
-char *_strch(char *s,char c)
+char *_strchr(char *s, char c)
 {
 	int index;
 
