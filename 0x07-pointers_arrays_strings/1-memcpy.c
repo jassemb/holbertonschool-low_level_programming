@@ -1,11 +1,12 @@
 #include "holberton.h"
 /**
- * _memset - fills memory with a constant byte
- * @s: character array to fill
- * @b: constant byte to fill with
- * @n: how many bytes to fill
+ * _memcpy - copies memory area
+ * @dest: character array to copy to
+ * @src: character array to copy from
+ * @n: how many bytes to copy
  * Return: the pointer to the char array
  */
+
 char *_memcpy(char *dest, char *src, unsigned int n)
 {
 	unsigned int i;
