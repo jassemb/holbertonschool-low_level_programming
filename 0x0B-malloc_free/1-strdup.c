@@ -5,7 +5,7 @@
  *		which is a duplicate of the string str.
  *
  *  @str: The string to be copied.
- *   Return: If str == NULL or insufficient memory is available - NULL.
+ *  Return: If str == NULL or insufficient memory is available - NULL.
  *		Otherwise - a pointer to the duplicated string.
  *
  */
@@ -19,13 +19,13 @@ char *_strdup(char *str)
 
 	for (i = 0; str[i]; i++)
 		len++;
-	
+
 	sc = malloc(sizeof(char) * (len + 1));
 
 	if (sc == NULL)
 		return (NULL);
 
-	for(i = 0; str[i]; i++)
+	for (i = 0; str[i]; i++)
 		sc[i] = str[i];
 	
 	sc[len] = '\0';
