@@ -9,29 +9,22 @@ char *_memset(char *s, char b, unsigned int n);
  */
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	void *memptr;
+	void *mem;
+	char *filler;
+	unsigned int index;
 
 	if (nmemb == 0 || size == 0)
 		return (NULL);
-	memptr = malloc(nmemb * size);
-	if (memptr == NULL)
+
+	mem = malloc(size * nmemb);
+
+	if (mem == NULL)
 		return (NULL);
-	_memset(memptr, 0, (nmemb * size));
-	return (memptr);
-}
 
-/**
- * _memset - fills memory with a constant byte
- * @s: character array to fill
- * @b: constant byte to fill with
- * @n: how many bytes to fill
- * Return: the pointer to the char array
- */
-char *_memset(char *s, char b, unsigned int n)
-{
-	unsigned int i;
+	filler = mem;
 
-	for (i = 0; i < n; i++)
-		s[i] = b;
-	return (s);
+	for (index = 0; index < (size * nmemb); index++)
+		filler[index] = '\0';
+
+	return (mem);
 }
