@@ -2,7 +2,6 @@
 #include <stdlib.h>
 int _strlen(char *s);
 char *_strcpy(char *dest, char *src);
-dog_t *new_dog(char *name, float age, char *owner);
 /**
  * new_dog - makes a new dog, memory and all
  * @name: name to create mem and assign to for dog
@@ -13,68 +12,67 @@ dog_t *new_dog(char *name, float age, char *owner);
  */
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	dog_t *doggo;
+	dog_t *new_d;
 
-	if (name == NULL || age < 0 || owner == NULL)
+	new_d = malloc(sizeof(dog_t));
+	if (new_d == NULL)
 		return (NULL);
-
-	doggo = malloc(sizeof(dog_t));
-	if (doggo == NULL)
-		return (NULL);
-
-	doggo->name = malloc(sizeof(char) * (_strlen(name) + 1));
-	if (doggo->name == NULL)
+	if (name == NULL)
+		new_d->name = NULL;
+	else
 	{
-		free(doggo);
-		return (NULL);
+		new_d->name = malloc(_strlen(name) + 1);
+		if (new_d->name == NULL)
+		{
+			free(new_d);
+			return (NULL);
+		}
+		new_d->name = _strcpy(new_d->name, name);
 	}
-
-	doggo->owner = malloc(sizeof(char) * (_strlen(owner) + 1));
-	if (doggo->owner == NULL)
+	if (owner == NULL)
+		new_d->owner = NULL;
+	else
 	{
-		free(doggo->name);
-		free(doggo);
-		return (NULL);
+		new_d->owner = malloc(_strlen(owner) + 1);
+		if (new_d->owner == NULL)
+		{
+			free(new_d->name);
+			free(new_d);
+			return (NULL);
+		}
+		new_d->owner = _strcpy(new_d->owner, owner);
 	}
-
-	doggo->name = _strcopy(doggo->name, name);
-	doggo->age = age;
-	doggo->owner = _strcopy(doggo->owner, owner);
-
-	return (doggo);
+	new_d->age = age;
+	return (new_d);
 }
 /**
- * _strlen - Finds the length of a string.
- * @str: The string to be measured.
+ * _strlen - gets len of str
+ * @s: string to get length of
  *
- * Return: The length of the string.
+ * Return: length of s
  */
-int _strlen(char *str)
+int _strlen(char *s)
 {
-	int len = 0;
+	int i = 0;
 
-	while (*str++)
-		len++;
-
-	return (len);
+	for (i = 0; s[i]; i++)
+		;
+	return (i);
 }
-
 /**
- * _strcopy - Copies a string pointed to by src, including the
- *            terminating null byte, to a buffer pointed to by dest.
- * @dest: The buffer storing the string copy.
- * @src: The source string.
+ * _strcpy - copies string from src to dest
  *
- * Return: The pointer to dest.
+ * @dest: pointer to destination of string
+ * @src: pointer to source string to copy from
+ *
+ * Return: pointer to dest
  */
-char *_strcopy(char *dest, char *src)
+char *_strcpy(char *dest, char *src)
 {
-	int index = 0;
+	char *temp = dest;
 
-	for (index = 0; src[index]; index++)
-		dest[index] = src[index];
-
-	dest[index] = '\0';
-
+	while (*src)
+		*temp++ = *src++;
+	*temp = '\0';
 	return (dest);
 }
