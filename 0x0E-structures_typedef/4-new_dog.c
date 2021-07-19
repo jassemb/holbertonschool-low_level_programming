@@ -2,6 +2,7 @@
 #include <stdlib.h>
 int _strlen(char *s);
 char *_strcpy(char *dest, char *src);
+dog_t *new_dog(char *name, float age, char *owner);
 /**
  * new_dog - makes a new dog, memory and all
  * @name: name to create mem and assign to for dog
