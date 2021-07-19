@@ -1,5 +1,5 @@
-#ifndef _dog_H
-#define _dog_H
+#ifndef dog_H
+#define dog_H
 int _putchar(char c);
 /**
  * struct dog - defines a new type struct dog
