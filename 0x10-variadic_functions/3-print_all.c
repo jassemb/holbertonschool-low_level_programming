@@ -1,16 +1,10 @@
 #include <stdio.h>
+#include <stdarg.h>
 #include "variadic_functions.h"
 void _print_char(va_list *args);
 void _print_integer(va_list *args);
 void _print_float(va_list *args);
 void _print_string(va_list *args);
-/**
- * print_all - prints all parameters passed variadiclly
- * @format: string with types of variables, in order
- * @...: variables to print out
- *
- * Return: always void
- */
 /**
  * print_char - Prints a char.
  * @arg: A list of arguments pointing to
@@ -66,6 +60,15 @@ void print_string(va_list arg)
 
 	printf("%s", str);
 }
+/**
+ * print_all - Prints anything, followed by a new line.
+ * @format: A string of characters representing the argument types.
+ * @...: A variable number of arguments to be printed.
+ *
+ * Description: Any argument not of type char, int, float,
+ *              or char * is ignored.
+ *              If a string argument is NULL, (nil) is printed instead.
+ */
 void print_all(const char * const format, ...)
 {
 	va_list args;
