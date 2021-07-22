@@ -1,18 +1,18 @@
+; File: 100-hello_holberton.asm
+; Desc: 64-bit assembly program that prints
+;       Hello, Holberton followed by a new line.
 section .data
-	msg db 10d,13d,"Hello, Holberton"
+	msg: db 'Hello, Holberton',0xa
 	l equ $-msg
 
 section .text
-	global _start
+	global main
+main:
+   mov edx,len
+   mov ecx,msg
+   mov ebx,1
+   mov eax,4
+   int 0x80
 
-_start:
-	mov rax,1
-	mov rdi,1
-	mov rsi,msg
-	mov rdx,l
-	syscall
-
-	mov rax,60
-	mov rdi,0
-	syscall
-end:
+   mov eax,0
+   int 0x80
