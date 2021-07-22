@@ -1,9 +1,7 @@
-  
 /**
  * op_add - Adds two integers
  * @a: first addend
  * @b: second addend
- *
  * Return: sum
  */
 int op_add(int a, int b)
