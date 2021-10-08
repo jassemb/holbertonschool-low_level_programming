@@ -10,7 +10,7 @@ hash_table_t *hash_table_create(unsigned long int size)
 	unsigned long int i;
 	hash_table_t *new_table = NULL;
 
-	if (size < 1)
+	if (size == 0)
 		return (NULL);
 	new_table = calloc(1, sizeof(hash_table_t));
 	if (new_table == NULL)
@@ -18,8 +18,8 @@ hash_table_t *hash_table_create(unsigned long int size)
 		free(new_table);
 		return (NULL);
 	}
-	new_table->array = calloc(1, sizeof(sigset_t *) * size);
-	if (new_table == NULL)
+	new_table->array = calloc(size, sizeof(sigset_t *));
+	if (new_table->array == NULL)
 	{
 		free(new_table);
 		return (NULL);
